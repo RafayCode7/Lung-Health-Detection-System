@@ -1,4 +1,3 @@
-# Lung-Health-Detection-System
 
 # Lung Health Detectction System
 
@@ -14,6 +13,7 @@ The Languages Used in this project are
 - Python 12.0 , Django 
 - SQLite Database 
 
+
 # Machine Learning and Deep Learninh 
 For image processing the the tensorflow and keras libraries are used usind models like
 - VGG196
@@ -21,5 +21,12 @@ For image processing the the tensorflow and keras libraries are used usind model
 - Logistic Regression 
 
 # Screan Short of Layout 
-- ![Screenshot (75)](https://github.com/RafayCode7/Lung-Health-Detection-System/assets/123303399/d9c1f010-2e9c-406e-83bd-18199678a6ea)
+![Screenshot (75)](https://github.com/RafayCode7/Lung-Health-Detection-System/assets/123303399/ea34cd90-aca4-40f4-ab50-86639db8e460)
+
+![Screenshot (64)](https://github.com/RafayCode7/Lung-Health-Detection-System/assets/123303399/aad09d45-3731-4c69-a72d-6697057abfae)
+![Screenshot (65)](https://github.com/RafayCode7/Lung-Health-Detection-System/assets/123303399/fa3e28d3-fcdf-489f-8117-8acdedbdc8d5)
+![Screenshot (77)](https://github.com/RafayCode7/Lung-Health-Detection-System/assets/123303399/dd229393-58f3-4a39-b0bd-7e034438346d)
+
+
+
 
