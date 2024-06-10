@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Prediction Result</h2>
+        <div class="result">
+            <h2>Uploaded Image</h2>
+            <img src="/media/{{ uploaded_image_path }}" alt="Uploaded Image">
+        </div>
+        <div class="result">
+            <h2>Prediction Result</h2>
+            <p>The predicted label is: {{ predicted_label }}</p>
+            <p>Confidence: {{ confidence }}</p>
+        </div>
+        <div class="result">
+            <a href="{% url 'predictImage' %}">Upload Another Image</a>
+        </div>
+    </div>
+
+</body>
+</html>

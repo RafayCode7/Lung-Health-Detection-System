@@ -1,0 +1,229 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>Lung Health Detection</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="../static/img/logo.jpg">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="../static/css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="../static/css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="../static/css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="../static/css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="../static/css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="../static/css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="../static/css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="../static/css/responsive.css">
+		
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+	
+	
+		
+			
+		
+		
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs overlay">
+			<div class="container">
+				<div class="bread-inner">
+					<div class="row">
+						<div class="col-12">
+							<h2>Blog Single</h2>
+							<ul class="bread-list">
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><i class="icofont-simple-right"></i></li>
+								<li class="active">Blog Single</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+		
+		<!-- Single News -->
+		<section class="news-single section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-12">
+						<div class="row">
+							<div class="col-12">
+								<div class="single-main">
+									<!-- News Head -->
+									<div class="news-head">
+										<img src="../static/img/home.jpg" alt="#">
+									</div>
+									<!-- News Title -->
+									<h1 class="news-title"><a href="../templates/n">First — What is pneumonia?</a></h1>
+									
+									<!-- News Text -->
+									<div class="news-text">
+										<p>Pneumonia is a severe lung infection, where it causes the tiny air sacs in the lungs to be inflamed and filled with fluid or pus. Patients with pneumonia may need to be hospitalized or admitted to the intensive care unit </p>
+										<p><h4>Some facts about pneumonia</h4>
+											<div>Is the world’s leading cause of death among children under the age of 5².</div> 
+											<div>Is the most common reason for US children to be hospitalized².</div>
+											<div>For US adults, pneumonia is the most common cause of hospital admissions other than women giving birth².</div></p>
+										<div class="image-gallery">
+											<div class="row">
+												<div class="col-lg-6 col-md-6 col-12">
+													<div class="single-image">
+														<img src="../static/img/lung1.jpg" alt="#">
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-6 col-12">
+													<div class="single-image">
+														<img src="../static/img/lung2.jpg" alt="#">
+													</div>
+												</div>
+											</div>
+										</div>
+										<br>
+										<h4>How to detect pneumonia?</h4>
+									
+										<p>Now we know that pneumonia is a common illness that affects many people each year in the U.S. and around the world. How do we usually detect this disease?
+
+										It turns out that chest X-rays have long been considered the best tool to detect any form of pneumonia³. However, studies have shown that even experienced radiologists often have a hard time correctly identify whether something is an infiltrate (a substance denser than air, such as pus or fluid) on the X-Ray⁴. This causes delays in diagnosis, which increases the disease severity and associated mortality rate.</p>
+										<!-- <blockquote class="overlay">
+											<p>Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commodo et, sodales</p>					
+										</blockquote> -->
+										<h4>
+											Approach
+										</h4>
+										<p>Below is the high-level approach on how I created the deep learning model. I first collected the data from Kaggle, which are chest X-Ray images of patients from China. After some simple exploratory data analysis, I preprocessed the images through rescaling the pixels and image augmentations. Then, I moved onto creating the architecture of convolutional neural network (CNN) model, which is a type of deep learning model.</p>
+										<h4>
+											Data Collection
+										</h4>
+										<p>Data, obtained from Kaggle, contains 5,856 chest X-Ray images of pediatric patients under age of 5 from a medical center in Guangzhou, China.</p>
+										<img src="../static/img/pf3.jpg" alt="#">
+										<p><h5>Image Preprocessing</h5>
+											Next, these images were preprocessed through the pixel normalizations and data augmentation.
+											
+											<h5>Pixel Normalization</h5>
+											For most image data, pixel values are integers with values between 0 to 255. As neural networks process inputs using small weight values, inputs with larger values slow down the learning process. Normalizing pixels would shrink the integers to values between 0 to 1, hence it’s a good practice to normalize pixels to ensure efficient computation.
+											
+											<h5>>Data Augmentation</h5>
+											Additionally, we’ve also applied some augmentations to the images: horizontal flip, zoomed-in, and sheer. Data augmentation is a good practice to not only to add more data to the existing dataset but also add minor alterations, a.k.a. diversity, to avoid the model from overfitting to training data.
+											
+											<h5>Modeling</h5>
+											Deep learning is really an art of craft, and you really could construct your model however you’d like. While there are some common model architectures, you would still try out different configuration to get the best results for your model.</p>
+										
+
+										<div class="single-image">
+											<h3>
+												Lung Cancer
+											</h3>
+											<p>Lung cancer is the leading cause of cancer-related deaths in North America and other developed countries. One of the reasons lung cancer is at the top of the list is that it is often not diagnosed until the cancer is at an advanced stage. Thus, the earliest diagnosis of lung cancer is crucial, especially in screening high-risk populations, such as smokers, exposure to fumes, oil fields, toxic occupational places, etc. Based on the current knowledge, it looks that there is an urgent need to identify novel biomarkers. The current diagnosis of lung cancer includes different types of imaging complemented with pathological assessment of biopsies, but these techniques can still not detect early lung cancer developments. </p>
+											<img src="../static/img/lung3.jpg" alt="#">
+											<p><h4>What are the symptoms, and how is it diagnosed?</h4>
+
+												Symptoms of lung cancer, such as shortness of breath and chest pain, can be mistaken for pneumonia.
+												
+												"Many of my patients have been diagnosed as having pneumonia," says Dr. Mansfield. "They've received many rounds of antibiotics that were not beneficial. They make their way to us when a mass that was thought to be pneumonia on a chest X-ray never improved."
+												
+												A persistent cough, coughing up blood, weight loss, bone pain and headache also can be symptoms of lung cancer.
+												
+												Getting an accurate diagnosis typically involves a biopsy. "We like tissue to make a solid diagnosis," says Dr. Mansfield. "We use ultrasound or CT to guide where to place the needle to get the most accurate tissue sample."</p>
+										</div>
+									</div>
+									<div class="blog-bottom">
+										
+										<!-- Next Prev -->
+										<ul class="prev-next">
+											<li class="prev"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+											<li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+										</ul>
+										<!--/ End Next Prev -->
+									</div>
+								</div>
+							</div>
+							
+					
+			</div>
+			
+		
+		<!-- jquery Min JS -->
+        <script src="../static/js/jquery.min.js"></script>
+		<!-- jquery Migrate JS -->
+		<script src="../static/js/jquery-migrate-3.0.0.js"></script>
+		<!-- jquery Ui JS -->
+		<script src="../static/js/jquery-ui.min.js"></script>
+		<!-- Easing JS -->
+        <script src="../static/js/easing.js"></script>
+		<!-- Color JS -->
+		<script src="../static/js/colors.js"></script>
+		<!-- Popper JS -->
+		<script src="../static/js/popper.min.js"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="../static/js/bootstrap-datepicker.js"></script>
+		<!-- Jquery Nav JS -->
+        <script src="../static/js/jquery.nav.js"></script>
+		<!-- Slicknav JS -->
+		<script src="../static/js/slicknav.min.js"></script>
+		<!-- ScrollUp JS -->
+        <script src="../static/js/jquery.scrollUp.min.js"></script>
+		<!-- Niceselect JS -->
+		<script src="../static/js/niceselect.js"></script>
+		<!-- Tilt Jquery JS -->
+		<script src="../static/js/tilt.jquery.min.js"></script>
+		<!-- Owl Carousel JS -->
+        <script src="../static/js/owl-carousel.js"></script>
+		<!-- counterup JS -->
+		<script src="../static/js/jquery.counterup.min.js"></script>
+		<!-- Steller JS -->
+		<script src="js/steller.js"></script>
+		<!-- Wow JS -->
+		<script src="../static/js/wow.min.js"></script>
+		<!-- Magnific Popup JS -->
+		<script src="../static/js/jquery.magnific-popup.min.js"></script>
+		<!-- Counter Up CDN JS -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="../static/js/bootstrap.min.js"></script>
+		<!-- Main JS -->
+		<script src="../static/js/main.js"></script>
+    </body>
+</html>

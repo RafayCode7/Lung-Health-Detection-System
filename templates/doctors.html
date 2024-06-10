@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+        <title>Lung Health Detection</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="D:\FYP\favicon.png">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="../static/css/nice-select.css">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="../static/css/icofont.css">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="../static/css/slicknav.min.css">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="../static/css/owl-carousel.css">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="../static/css/datepicker.css">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="css/animate.min.css">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="../static/css/magnific-popup.css">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="../static/css/normalize.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link rel="stylesheet" href="../static/css/responsive.css">
+		<link rel="stylesheet" href="../static/css/doctors.css">
+		<style>
+			  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+	
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 20px; /* Spacing between cards */
+}
+
+.contact-card {
+    background-color: #8cd1f9;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    margin: 0;
+    color: #333;
+}
+
+.contact-card .details {
+    margin-top: 15px;
+}
+
+.contact-card .details span {
+    font-weight: bold;
+}
+.contact-card:hover {
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+		</style>
+
+		
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <!-- <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div> -->
+        <!-- End Preloader -->
+	
+	
+		
+			
+		
+		
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs overlay">
+			<div class="container">
+				<div class="bread-inner">
+					<div class="row">
+						<div class="col-12">
+							<h2>"Our Doctors"</h2>
+							<ul class="bread-list">
+								<li><a href="{% url 'PatientPanel' %}">Home</a></li>
+								<li><i class="icofont-simple-right"></i></li>
+								<li class="active">Our Doctors</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+		<h1>Doctors</h1>
+    <div class="contact-cards">
+        {% for doctor in doctors %}
+            <div class="contact-card">
+                <h2>{{ doctor.user.username }}</h2>
+                <p>Email: {{ doctor.user.email }}</p>
+                <div class="details">
+                    <p><span>Specialty:</span> {{ doctor.specialty }}</p>
+                    <p><span>Experience Years:</span> {{ doctor.experience_years }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>

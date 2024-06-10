@@ -1,0 +1,178 @@
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Prediction</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="">
+    <meta name='copyright' content=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+              margin: 0;
+              font-family: Arial, sans-serif;
+              background-color: #f0f8ff;
+              background-image: url('path_to_your_background_image.jpg'); /* Replace 'path_to_your_background_image.jpg' with the actual path to your background image */
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+          }
+  
+          .header {
+              background-color: #87ceeb;
+              color: white;
+              text-align: center;
+              padding: 20px 0;
+              border-bottom: 3px solid #00bfff;
+              height: 80px; /* Adjusted height */
+          }
+  
+          .header h1 {
+              margin: 0;
+              font-size: 2.5em;
+              font-weight: 300;
+              letter-spacing: 1px;
+          }
+  
+          .header h1 a {
+              color: white;
+              text-decoration: none;
+          }
+          
+          .header img {
+              height: 50px; /* Adjust the height of the logo as needed */
+              margin-right: 10px; /* Adjust as needed */
+              border-radius: 20%; /* Make the logo round */
+              overflow: hidden; /* Hide overflow from rounded corners */
+          }
+  
+  
+          .header h1::after {
+              content: '';
+              display: block;
+              width: 50px;
+              height: 3px;
+              background: white;
+              margin: 10px auto 0;
+              border-radius: 2px;
+          }
+  
+          .container {
+              max-width: 600px;
+              margin: 30px auto;
+              padding: 20px;
+              background: rgba(255, 255, 255, 0.7); /* Transparent white background */
+              border-radius: 8px;
+          }
+  
+          .container h2 {
+              text-align: center;
+              margin-bottom: 20px;
+              font-size: 1.75em;
+          }
+  
+          form label {
+              display: block;
+              margin-bottom: 10px;
+              font-weight: bold;
+          }
+  
+          form input[type="file"] {
+              display: block;
+              margin: 0 auto 20px;
+          }
+  
+          form button {
+              display: block;
+              width: 100%;
+              padding: 10px;
+              background-color: #00bfff;
+              border: none;
+              color: white;
+              font-size: 1em;
+              cursor: pointer;
+              border-radius: 4px;
+          }
+  
+          form button:hover {
+              background-color: #007fff;
+          }
+  
+          #imagePreview img {
+              max-width: 100%;
+              margin-top: 20px;
+              border-radius: 8px;
+          }
+  
+          .result {
+              margin-top: 20px;
+              text-align: center;
+              max-width: 80%;
+              margin-top: 20px;
+              border-radius: 8px;
+          }
+  
+          .result h2 {
+              margin-bottom: 10px;
+              font-size: 1.5em;
+          }
+  
+          .result p {
+              font-size: 1.2em;
+          }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>
+            <a href="{% url 'home' %}">
+                <img src="../static/img/logo.jpg" alt="Logo"> <!-- Replace 'path_to_your_logo_image.png' with the actual path to your logo image -->
+                Detect Pneumonia Using X-Ray
+            </a>
+        </h1>
+    </header>
+
+    <div class="container">
+        <h2>Upload an Image</h2>
+        <form id="uploadForm" action="{% url 'predictImage' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image">Select image to upload:</label>
+            <input type="file" name="image" id="image" onchange="previewImage(event)">
+            <button type="submit">Upload & Predict</button>
+        </form>
+        <div id="imagePreview"></div>
+        {% if uploaded_image_path %}
+        <div class="result">
+            <h2>Uploaded Image</h2>
+            <img src="{{ uploaded_image_path }}" alt="Uploaded Image">
+        </div>
+        {% endif %}
+        {% if predicted_label %}
+        <div class="result">
+            <h2>Prediction Result</h2>
+            <p>The predicted label is: {{ predicted_label }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var imgElement = document.createElement('img');
+                imgElement.src = reader.result;
+                document.getElementById('imagePreview').innerHTML = '';
+                document.getElementById('imagePreview').appendChild(imgElement);
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+
+</html>

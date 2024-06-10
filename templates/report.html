@@ -1,0 +1,21 @@
+<!-- detection/templates/detection/report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assessment Report</title>
+</head>
+<body>
+    <h1>Health Assessment Report</h1>
+    <p>Latest Symptom Entry:</p>
+    <ul>
+        <li>Age: {{ latest_symptom.age }}</li>
+        <li>Gender: {{ latest_symptom.gender }}</li>
+        
+<div id="result">Result:{{ result2 }}</div>
+        <!-- Add other symptom fields as needed -->
+    </ul>
+    <!-- Your report content goes here -->
+</body>
+</html>

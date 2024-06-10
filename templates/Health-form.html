@@ -1,0 +1,333 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Health Assessment</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/static/css/style2.css" /> -->
+
+
+      <style>
+  body {
+    background-image: url('/static/img/blog1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+  /* Other CSS styles here */
+
+
+
+  header{
+    font-family:Roboto;
+    font-size:26px;
+    color:black;
+    font-weight:bold;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  #survey-form{
+    background-color:#ffffffbc;
+    font-family:Quicksand;
+    max-width:70%;
+    margin:auto;
+    padding:0;
+    border-radius:15px;
+  }
+
+  #description{
+    text-align:center;
+    font-size:16px;
+    padding-top:17px;
+    font-weight:bold;
+  }
+
+  .fieldset{
+    border-width:0;
+    padding-top:1%;
+
+  }
+
+  .sub-group{
+    position:relative;
+    right:30px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    padding:1%;
+  }
+
+  label.left{
+    width:30%;
+    padding-right:4%;
+    text-align:right;
+  }
+
+
+  .right{
+    width:30%;
+  }
+
+  .input-field{
+    height:20px;
+    padding:5px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+  }
+
+  #dropdown{
+    font-family:Quicksand;
+    height:30px;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+  }
+
+  .checkbox{
+    position:relative;
+    padding:3px;
+    right:3px;
+    bottom:15px;
+  }
+
+  .radio{
+    position:relative;
+    padding:3px;
+    bottom:15px;
+  }
+
+  h2{
+    position:relative;
+    bottom:8px;
+    font-size:16px;
+    text-align:center;
+    font-weight:bold;
+  }
+
+  .commentbox{
+    text-align:center;
+  }
+
+  textarea{
+    width:65%;
+    border-radius:4px;
+  }
+
+  #submit{
+    background:#cfeef7;
+    font-family:Roboto;
+    border-radius:4px;
+    font-size:23px;
+  }
+
+  label:hover{
+    cursor:pointer;
+  }
+    #buttonContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #buttonInput {
+            padding: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            border: 3px solid #5b605c;
+            background-color: rgb(40, 48, 40);
+            color: white;
+            border-radius: 10px;
+        }
+
+#result {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+ @media (max-width: 800px) {
+    body {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    body {
+      font-size: 9px;
+    }
+  }
+  </style>
+  </head>
+  <body>
+  <header>
+  <div id="title"><h1>Lung Cancer Detection Using Symptoms</h1>
+   </header>
+
+<form id="survey-form"  action="{% url 'result' %}" method="GET">
+
+  <div id="description"> Take Control of your Lung Health Journey With Us!</div><br>
+
+  <fieldset class="fieldset">
+
+    <div class="sub-group">
+      <label  class="left" id="number-label" for="number">Age:</label>
+    <input type="number" name="n1" placeholder="Age" min="1" max="100" class="right input-field" id="number">
+  </div>
+
+
+
+   <fieldset class="fieldset">
+    <div class="sub-group">
+        <label class="left" id="left-radio">Gender</label>
+        <ul style="list-style: none" class="right">
+            <li class="radio"><label><input name="n2" value="1" type="radio" class="recommendation" required>F</label></li>
+            <li class="radio"><label><input name="n2" value="3" type="radio" class="recommendation" required>M</label></li>
+        </ul>
+    </div>
+</fieldset>
+
+  </fieldset>
+
+    <fieldset class="fieldset">
+  <div class="sub-group">
+  <label class="left" id="left-radio">Smoking</label>
+
+   <ul style="list-style: none" class="right">
+       <li class="radio"><label><input name="n6" value="1" type="radio" class="recommendation">Yes</label></li>
+       <li class="radio"><label><input name="n6" value="3" type="radio" class="recommendation">No</label></li>
+   </ul>
+  </div></fieldset>
+  <fieldset class="fieldset">
+    <div class="sub-group">
+    <label class="left" id="left-radio">Yellow Fingers :</label>
+
+     <ul style="list-style: none" class="right">
+         <li class="radio"><label><input name="n7" value="1" type="radio" class="recommendation">Yes</label></li>
+         <li class="radio"><label><input name="n7" value="3" type="radio" class="recommendation">No</label></li>
+     </ul>
+    </div></fieldset>
+    <fieldset class="fieldset">
+      <div class="sub-group">
+      <label class="left" id="left-radio">Anxiety :</label>
+
+       <ul style="list-style: none" class="right">
+           <li class="radio"><label><input name="n8" value="1" type="radio" class="recommendation">Yes</label></li>
+           <li class="radio"><label><input name="n8" value="3" type="radio" class="recommendation">No</label></li>
+       </ul>
+      </div></fieldset>
+      <fieldset class="fieldset">
+        <div class="sub-group">
+        <label class="left" id="left-radio">Peer Pressure :</label>
+
+         <ul style="list-style: none" class="right">
+             <li class="radio"><label><input name="n9" value="1" type="radio" class="recommendation">Yes</label></li>
+             <li class="radio"><label><input name="n9" value="3" type="radio" class="recommendation">No</label></li>
+         </ul>
+        </div></fieldset>
+        <fieldset class="fieldset">
+          <div class="sub-group">
+          <label class="left" id="left-radio">Chronic Desease :</label>
+
+           <ul style="list-style: none" class="right">
+               <li class="radio"><label><input name="n10" value="1" type="radio" class="recommendation">Yes</label></li>
+               <li class="radio"><label><input name="n10" value="3" type="radio" class="recommendation">No</label></li>
+           </ul>
+          </div></fieldset>
+          <fieldset class="fieldset">
+            <div class="sub-group">
+            <label class="left" id="left-radio">Fatigue :</label>
+
+             <ul style="list-style: none" class="right">
+                 <li class="radio"><label><input name="n11" value="1" type="radio" class="recommendation">Yes</label></li>
+                 <li class="radio"><label><input name="n11" value="3" type="radio" class="recommendation">No</label></li>
+             </ul>
+            </div></fieldset>
+            <fieldset class="fieldset">
+              <div class="sub-group">
+              <label class="left" id="left-radio">Allergy :</label>
+
+               <ul style="list-style: none" class="right">
+                   <li class="radio"><label><input name="n12" value="1" type="radio" class="recommendation">Yes</label></li>
+                   <li class="radio"><label><input name="n12" value="3" type="radio" class="recommendation">No</label></li>
+               </ul>
+              </div></fieldset>
+              <fieldset class="fieldset">
+                <div class="sub-group">
+                <label class="left" id="left-radio">Wheezing :</label>
+
+                 <ul style="list-style: none" class="right">
+                     <li class="radio"><label><input name="n13" value="1" type="radio" class="recommendation">Yes</label></li>
+                     <li class="radio"><label><input name="n13" value="3" type="radio" class="recommendation">No</label></li>
+                 </ul>
+                </div></fieldset>
+                <fieldset class="fieldset">
+                  <div class="sub-group">
+                  <label class="left" id="left-radio">Alcohal Consumption :</label>
+
+                   <ul style="list-style: none" class="right">
+                       <li class="radio"><label><input name="n14" value="1" type="radio" class="recommendation">Yes</label></li>
+                       <li class="radio"><label><input name="n14" value="3" type="radio" class="recommendation">No</label></li>
+                   </ul>
+                  </div></fieldset>
+                  <fieldset class="fieldset">
+                    <div class="sub-group">
+                    <label class="left" id="left-radio">Coughing :</label>
+
+                     <ul style="list-style: none" class="right">
+                         <li class="radio"><label><input name="n15" value="1" type="radio" class="recommendation">Yes</label></li>
+                         <li class="radio"><label><input name="n15" value="3" type="radio" class="recommendation">No</label></li>
+                     </ul>
+                    </div></fieldset>
+                    <fieldset class="fieldset">
+                      <div class="sub-group">
+                      <label class="left" id="left-radio">Shortness Of Breath :</label>
+
+                       <ul style="list-style: none" class="right">
+                           <li class="radio"><label><input name="n16" value="1" type="radio" class="recommendation">Yes</label></li>
+                           <li class="radio"><label><input name="n16" value="3" type="radio" class="recommendation">No</label></li>
+                       </ul>
+                      </div></fieldset>
+                      <fieldset class="fieldset">
+                        <div class="sub-group">
+                        <label class="left" id="left-radio">Swollowing Dificulty :</label>
+
+                         <ul style="list-style: none" class="right">
+                             <li class="radio"><label><input name="n17" value="1" type="radio" class="recommendation">Yes</label></li>
+                             <li class="radio"><label><input name="n17" value="3" type="radio" class="recommendation">No</label></li>
+                         </ul>
+                        </div></fieldset>
+                        <fieldset class="fieldset">
+                          <div class="sub-group">
+                          <label class="left" id="left-radio">Cheast Pain :</label>
+
+                           <ul style="list-style: none" class="right">
+                               <li class="radio"><label><input name="n18" value="1" type="radio" class="recommendation">Yes</label></li>
+                               <li class="radio"><label><input name="n18" value="3" type="radio" class="recommendation">No</label></li>
+                           </ul>
+                          </div></fieldset>
+
+
+    <div id="buttonContainer">
+        <input type="submit" id="buttonInput"></input>
+    </div>
+
+</form>
+
+<div id="result">Result:{{ result2 }}</div>
+
+  </div>
+  </body>
+</html>
